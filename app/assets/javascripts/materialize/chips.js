@@ -21,6 +21,7 @@
     var self = this;
     this.$el = $(this);
     this.$document = $(document);
+    this.forceLower = $el.hasClass('force-lower')
     this.SELS = {
       CHIPS: '.chips',
       CHIP: '.chip',
@@ -267,7 +268,7 @@
       if (!self.isValid($chips, elem)) {
         return;
       }
-      if (elem.tag) {
+      if (self.forceLower && elem.tag) {
         elem.tag = elem.tag.trim().toLowerCase();
       }
       var $renderedChip = self.renderChip(elem);
