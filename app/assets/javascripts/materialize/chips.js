@@ -21,7 +21,7 @@
     var self = this;
     this.$el = $(this);
     this.$document = $(document);
-    this.forceLower = $el.hasClass('force-lower')
+    this.forceLower = this.$el.hasClass('force-lower')
     this.SELS = {
       CHIPS: '.chips',
       CHIP: '.chip',
