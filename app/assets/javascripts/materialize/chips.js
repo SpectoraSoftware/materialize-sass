@@ -162,7 +162,7 @@
         var chipsLength = $chips.children(SELS.CHIP).length;
 
         // enter or comma
-        if (13 === e.which || ',' === e.key) {
+        if (13 === e.which || (',' === e.key && $target.val() !== '')) {
           // Override enter if autocompleting.
           if (self.hasAutocomplete &&
               $chips.find('.autocomplete-content.dropdown-content').length &&
