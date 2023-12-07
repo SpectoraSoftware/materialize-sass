@@ -234,7 +234,7 @@ textarea.materialize-textarea {
 /* Textarea */
 
 // Default textarea
-textarea {
+textarea:not(.tailwind) {
   width: 100%;
   height: $input-height;
   background-color: transparent;

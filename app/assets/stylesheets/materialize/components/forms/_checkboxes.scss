@@ -2,25 +2,25 @@
    ========================================================================== */
 
 /* CUSTOM CSS CHECKBOXES */
-form p {
+form:not(.tailwind) p {
   margin-bottom: 10px;
   text-align: left;
 }
 
-form p:last-child {
+form:not(.tailwind) p:last-child {
   margin-bottom: 0;
 }
 
 /* Remove default checkbox */
-[type="checkbox"]:not(:checked),
-[type="checkbox"]:checked {
+[type="checkbox"]:not(:checked):not(.tailwind),
+[type="checkbox"]:checked:not(.tailwind) {
   position: absolute;
   left: -9999px;
   opacity: 0;
 }
 
 // Checkbox Styles
-[type="checkbox"] {
+[type="checkbox"]:not(.tailwind) {
   // Text Label Style
   + label {
     position: relative;
@@ -40,7 +40,7 @@ form p:last-child {
   /* checkbox aspect */
   + label:before,
   &:not(.filled-in) + label:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -50,7 +50,7 @@ form p:last-child {
     border: 2px solid $radio-empty-color;
     border-radius: 1px;
     margin-top: 2px;
-    transition: .2s;
+    transition: 0.2s;
   }
 
   &:not(.filled-in) + label:after {
@@ -68,8 +68,8 @@ form p:last-child {
     transform: scale(1);
     border: 0;
     border-radius: 50%;
-    box-shadow: 0 0 0 10px rgba(0,0,0,.1);
-    background-color: rgba(0,0,0,.1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -95,8 +95,8 @@ form p:last-child {
 }
 
 /* Indeterminate checkbox */
-[type="checkbox"]:indeterminate {
-  +label:before {
+[type="checkbox"]:indeterminate:not(.tailwind) {
+  + label:before {
     top: -11px;
     left: -12px;
     width: 10px;
@@ -126,11 +126,12 @@ form p:last-child {
 
   + label:before,
   + label:after {
-    content: '';
+    content: "";
     left: 0;
     position: absolute;
     /* .1s delay is for check animation */
-    transition: border .25s, background-color .25s, width .20s .1s, height .20s .1s, top .20s .1s, left .20s .1s;
+    transition: border 0.25s, background-color 0.25s, width 0.2s 0.1s,
+      height 0.2s 0.1s, top 0.2s 0.1s, left 0.2s 0.1s;
     z-index: 1;
   }
 
@@ -189,7 +190,7 @@ form p:last-child {
   &.tabbed:focus + label:after {
     border-radius: 2px;
     border-color: $radio-empty-color;
-    background-color: rgba(0,0,0,.1);
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
   &.tabbed:checked:focus + label:after {
