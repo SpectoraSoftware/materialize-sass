@@ -1,6 +1,6 @@
 module Materialize
   module Sass
-    VERSION = "0.97.8"
+    VERSION = "0.97.9"
   end
 end
 
